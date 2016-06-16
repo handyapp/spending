@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Spending</string>
+    <string name="payment_method_logo_description">Payment Method Icon</string>
+    <string name="payment_method_primary_information">Payment Method Short Information</string>
+
+    <string name="txt_payment_method_balance">0.00</string>
+    <string name="txt_payment_method_name">Payment Method Name</string>
+    <string name="txt_payment_method_currency">ISO Currency Code</string>
+    <string name="txt_payment_method_description">Description</string>
+
+    <string name="txt_empty_list">There is no data to show</string>
+
+    <string name="currency_picker_dialog_title">Select Currency</string>
+    <string name="currency_picker_search_hint">Search</string>
+    <string name="currency_picker_item_name">CODE</string>
 </resources>
