@@ -3,7 +3,7 @@ package com.github.handyapp.spending.domain;
 
 import com.orm.SugarRecord;
 import com.orm.dsl.NotNull;
-import com.orm.dsl.Unique;
+import com.orm.dsl.Table;
 
 import java.util.Date;
 
@@ -13,28 +13,28 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Transaction extends SugarRecord {
+@Table(name = "FINANCIAL_TRANSACTION")
+public class FinancialTransaction extends SugarRecord {
 
-    @NotNull
-    private Date date;
+    public enum Type {
+        DEBIT, CREDIT;
+    }
+
     @NotNull
     private Type type;
     /**
-     * Transaction value expressed in hundredth of a currency
+     * FinancialTransaction value expressed in hundredth of a currency
      */
     @NotNull
     private Long amount;
     @NotNull
+    private PaymentMethod source;
+    @NotNull
     private PaymentMethod target;
     @NotNull
-    @Unique
-    private String fingerPrint;
+    private Date date;
 
-    public Transaction() {
-    }
-
-    public enum Type {
-        DEBIT, CREDIT;
+    public FinancialTransaction() {
     }
 
 }

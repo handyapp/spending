@@ -23,8 +23,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+
+    provided 'org.projectlombok:lombok:1.16.8'
+
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.github.satyan:sugar:1.5'
-    provided 'org.projectlombok:lombok:1.16.8'
     compile 'javax.annotation:jsr250-api:1.0'
 }

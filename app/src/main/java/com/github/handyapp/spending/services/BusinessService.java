@@ -2,10 +2,9 @@ package com.github.handyapp.spending.services;
 
 import android.util.Log;
 
+import com.github.handyapp.spending.domain.FinancialTransaction;
 import com.github.handyapp.spending.domain.PaymentMethod;
-import com.github.handyapp.spending.domain.Transaction;
 
-import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Date;
@@ -23,7 +22,6 @@ public final class BusinessService {
         paymentMethod.setBalance(0L);
 
         Long pmId = paymentMethod.save();
-        Log.i(TAG, MessageFormat.format("New Payment Method has been added (ID: %d)", pmId));
 
         return paymentMethod;
     }
@@ -35,15 +33,15 @@ public final class BusinessService {
         return numberFormat.format(balance / 100);
     }
 
-    public static void addFunds(PaymentMethod target, long funds) {
-        moveFunds(target, Transaction.Type.CREDIT, funds);
+    public static void addIncome(PaymentMethod target, long funds) {
+        moveFunds(target, FinancialTransaction.Type.CREDIT, funds);
     }
 
-    public static void spendFunds(PaymentMethod target, long funds) {
-        moveFunds(target, Transaction.Type.DEBIT, funds);
+    public static void addExpense(PaymentMethod target, long funds) {
+        moveFunds(target, FinancialTransaction.Type.DEBIT, funds);
     }
 
-    private static void moveFunds(PaymentMethod target, Transaction.Type type, long funds) {
+    private static void moveFunds(PaymentMethod target, FinancialTransaction.Type type, long funds) {
         if (target == null || type == null) {
             Log.e(TAG, "A payment method or a transaction type are undefined");
         }
@@ -51,7 +49,7 @@ public final class BusinessService {
             Log.e(TAG, "Negative transaction is not allowed");
         }
 
-        Transaction transaction = new Transaction();
+        FinancialTransaction transaction = new FinancialTransaction();
         transaction.setFingerPrint(UUID.randomUUID().toString());
         transaction.setTarget(target);
         transaction.setType(type);
