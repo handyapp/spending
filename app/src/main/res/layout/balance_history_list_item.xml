@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/background_material_light"
+    android:padding="2dp"
+    android:clickable="false">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/transaction_icon"
+        android:src="@drawable/ic_income"
+        android:padding="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_balance_value"
+        android:id="@+id/transaction_value"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/transaction_icon"
+        android:layout_alignTop="@+id/transaction_icon"
+        android:paddingTop="5dp"
+        android:paddingBottom="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22.06.2016"
+        android:id="@+id/transaction_date"
+        android:textStyle="normal"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/transaction_value"
+        android:layout_toEndOf="@+id/transaction_icon"
+        android:textSize="12sp" />
+
+</RelativeLayout>

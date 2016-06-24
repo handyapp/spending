@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities.AddPaymentMethodActivity"
+    tools:context=".activities.AddBalanceActivity"
     android:nestedScrollingEnabled="false">
 
     <EditText
@@ -16,7 +16,7 @@
         android:id="@+id/accountNameValueEdit"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:hint="@string/txt_payment_method_name" />
+        android:hint="@string/txt_balance_name" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,7 +25,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/accountNameValueEdit"
-        android:hint="@string/txt_payment_method_currency" />
+        android:hint="@string/txt_balance_currency"
+        android:layout_gravity="center" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,14 +37,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/accountCurrencyValueEdit"
-        android:hint="@string/txt_payment_method_description" />
+        android:hint="@string/txt_balance_description" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="@string/btn_lbl_save_balance"
         android:id="@+id/saveButton"
         android:layout_below="@+id/accountDescriptionValueEdit"
         android:layout_centerHorizontal="true"
-        android:onClick="processAddPaymentMethod"/>
+        android:onClick="processAddBalance"/>
 </RelativeLayout>

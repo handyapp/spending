@@ -1,4 +1,4 @@
-package com.github.handyapp.spending.fragments;
+package com.github.handyapp.spending.ui.components;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.github.handyapp.spending.R;
+import com.github.handyapp.spending.ui.adapters.CurrencyPickerAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

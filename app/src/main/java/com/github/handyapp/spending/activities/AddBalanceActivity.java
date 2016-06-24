@@ -5,28 +5,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.github.handyapp.spending.services.BusinessService;
+import com.github.handyapp.spending.services.BalanceService;
 import com.github.handyapp.spending.R;
 
-import java.util.Currency;
-
-public class AddPaymentMethodActivity extends Activity {
+public class AddBalanceActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_payment_method);
+        setContentView(R.layout.activity_add_balance);
     }
 
-    public void processAddPaymentMethod(View view) {
+    public void processAddBalance(View view) {
 
         EditText nameValue = (EditText) findViewById(R.id.accountNameValueEdit);
         EditText currencyValue = (EditText) findViewById(R.id.accountCurrencyValueEdit);
         EditText descriptionValue = (EditText) findViewById(R.id.accountDescriptionValueEdit);
 
-        BusinessService.createPaymentMethod(
+        BalanceService.createBalance(
                 nameValue.getText().toString(),
-                Currency.getInstance(currencyValue.getText().toString()),
+                currencyValue.getText().toString(),
                 descriptionValue.getText().toString()
         );
 

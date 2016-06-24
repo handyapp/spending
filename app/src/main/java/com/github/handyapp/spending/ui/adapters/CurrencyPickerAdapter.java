@@ -1,4 +1,4 @@
-package com.github.handyapp.spending.fragments;
+package com.github.handyapp.spending.ui.adapters;
 
 
 import android.content.Context;

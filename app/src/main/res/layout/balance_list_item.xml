@@ -4,34 +4,34 @@
     android:background="@color/background_material_light"
     android:padding="2dp"
     android:clickable="false"
-    android:contentDescription="@string/payment_method_primary_information">
+    android:contentDescription="@string/txt_balance_primary_information">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/paymentMethodIcon"
+        android:id="@+id/balanceIcon"
         android:src="@drawable/ico_visa"
-        android:contentDescription="@string/payment_method_logo_description"
+        android:contentDescription="@string/txt_balance_logo_description"
         android:padding="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
-        android:text="@string/txt_payment_method_name"
+        android:text="@string/txt_balance_name"
         android:id="@+id/emptyList"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/paymentMethodIcon"
+        android:layout_toEndOf="@+id/balanceIcon"
         android:paddingTop="5dp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_payment_method_balance"
+        android:text="@string/txt_balance_value"
         android:id="@+id/accountBalance"
         android:layout_below="@+id/emptyList"
-        android:layout_toEndOf="@+id/paymentMethodIcon"
+        android:layout_toEndOf="@+id/balanceIcon"
         android:textIsSelectable="false"
         android:textColor="@android:color/holo_green_dark" />
 
